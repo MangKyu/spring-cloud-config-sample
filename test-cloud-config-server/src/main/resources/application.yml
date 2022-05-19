@@ -1,0 +1,13 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MangKyu/test-cloud-config-file.git
+          search-paths: nw/*, lw/*
+          default-label: main
+

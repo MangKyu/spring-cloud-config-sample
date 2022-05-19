@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: nw
+  profiles:
+    active: kr1-real
+  config:
+    import: optional:configserver:http://localhost:8888
+
+# ????? ???? Actuator ??
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 9001
