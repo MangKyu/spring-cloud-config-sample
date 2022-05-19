@@ -1,12 +1,10 @@
 server:
   port: 8888
 spring:
-  application:
-    name: config
   cloud:
     config:
       server:
         git:
+          default-label: master
           uri: https://github.com/MangKyu/spring-cloud-config-sample
           search-paths: test-cloud-config-file/**
-          default-label: master

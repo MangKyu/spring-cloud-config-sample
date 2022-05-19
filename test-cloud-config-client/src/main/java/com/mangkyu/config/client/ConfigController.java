@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ConfigController {
 
-    private final LocalConfig localConfig;
+    private final MyConfig myConfig;
 
-    @GetMapping("/local")
-    public ResponseEntity<LocalConfig> localConfig() {
-        System.out.println(localConfig);
-        return ResponseEntity.ok(localConfig);
+    @GetMapping("/config")
+    public ResponseEntity<String> config() {
+        System.out.println(myConfig);
+        return ResponseEntity.ok(myConfig.toString());
     }
 
 }
