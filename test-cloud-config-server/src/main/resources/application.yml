@@ -7,7 +7,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/MangKyu/test-cloud-config-file.git
-          search-paths: nw/*, lw/*
-          default-label: main
-
+          uri: https://github.com/MangKyu/spring-cloud-config-sample
+          search-paths: test-cloud-config-file/**
+          default-label: master
