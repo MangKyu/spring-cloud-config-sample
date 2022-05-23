@@ -1,4 +1,4 @@
-package com.mangkyu.config.client.cloudwatch;
+package com.mangkyu.config.client.clientwatch;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.config.client.ConfigServicePropertySourceLocator;
@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.springframework.util.StringUtils.hasText;
 
 @Slf4j
-public class ConfigGitClientWatch implements Closeable, EnvironmentAware {
+public class CustomConfigClientWatch implements Closeable, EnvironmentAware {
 
     private final AtomicBoolean running = new AtomicBoolean(false);
     private final AtomicReference<String> version = new AtomicReference<>();
@@ -25,7 +25,7 @@ public class ConfigGitClientWatch implements Closeable, EnvironmentAware {
 
     private Environment environment;
 
-    public ConfigGitClientWatch(ContextRefresher refresher, ConfigServicePropertySourceLocator locator) {
+    public CustomConfigClientWatch(ContextRefresher refresher, ConfigServicePropertySourceLocator locator) {
         this.refresher = refresher;
         this.locator = locator;
     }

@@ -1,4 +1,4 @@
-package com.mangkyu.config.client.cloudwatch;
+package com.mangkyu.config.client.clientwatch;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -8,8 +8,8 @@ import org.springframework.cloud.context.refresh.ConfigDataContextRefresher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration(proxyBeanMethods = false)
-public class ConfigClientWatchConfiguration {
+@Configuration
+public class CustomClientWatchConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(ConfigServicePropertySourceLocator.class)
@@ -19,8 +19,8 @@ public class ConfigClientWatchConfiguration {
     }
 
     @Bean
-    public ConfigGitClientWatch configGitClientWatch(ConfigDataContextRefresher refresher, ConfigServicePropertySourceLocator locator) {
-        return new ConfigGitClientWatch(refresher, locator);
+    public CustomConfigClientWatch configGitClientWatch(ConfigDataContextRefresher refresher, ConfigServicePropertySourceLocator locator) {
+        return new CustomConfigClientWatch(refresher, locator);
     }
 
 }
