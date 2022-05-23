@@ -19,6 +19,7 @@ public class CustomClientWatchConfiguration {
     }
 
     @Bean
+    @ConditionalOnProperty(name = ConfigClientProperties.PREFIX + ".enabled", matchIfMissing = true)
     public CustomConfigClientWatch configGitClientWatch(ConfigDataContextRefresher refresher, ConfigServicePropertySourceLocator locator) {
         return new CustomConfigClientWatch(refresher, locator);
     }
