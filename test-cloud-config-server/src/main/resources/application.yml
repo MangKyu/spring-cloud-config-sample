@@ -8,3 +8,4 @@ spring:
           default-label: master
           uri: https://github.com/MangKyu/spring-cloud-config-sample
           search-paths: test-cloud-config-file/**
+          basedir: ./repo
